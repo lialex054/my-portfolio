@@ -1,8 +1,10 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Linkedin, Mail } from 'lucide-react';
 import { projects } from '@/lib/projects';
+import { Button } from '@/components/ui/button';
 
 // Helper function to get month number from month name
 const getMonthNumber = (monthName: string) => {
@@ -147,9 +149,9 @@ const Page = () => {
                 rows={4}
                 className="contact-input resize-none"
               />
-              <button className="btn-primary w-full py-3">
+              <Button className="w-full">
                 Send Message
-              </button>
+              </Button>
             </div>
 
             <div>
@@ -191,7 +193,7 @@ const Page = () => {
           <div className="mb-8 flex justify-center relative">
             <div className="profile-container">
               <div className="profile-image">
-                👨‍💻
+                捉窶昨汳ｻ
               </div>
               <div className="profile-status animate-pulse-green" />
             </div>
@@ -209,12 +211,12 @@ const Page = () => {
 
           {/* CTA Buttons */}
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="btn-gradient px-8 py-3">
-              View Projects
-            </button>
-            <button className="btn-outline px-8 py-3">
-              Download CV
-            </button>
+            <Button asChild variant="gradient" size="lg">
+              <Link href="/projects">View Projects</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="#">Download CV</Link>
+            </Button>
           </div>
         </div>
       </div>
@@ -255,7 +257,7 @@ const Page = () => {
             <div className="mb-6">
               <div className="w-full h-48 rounded-lg bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-400/20 overflow-hidden">
                 <div className="w-full h-full bg-gray-800 flex items-center justify-center text-4xl">
-                  🚀
+                  噫
                 </div>
               </div>
             </div>
@@ -265,12 +267,12 @@ const Page = () => {
             </p>
 
             <div className="flex gap-3 mb-6">
-              <button className="btn-secondary px-6 py-2">
-                View Project
-              </button>
-              <button className="btn-secondary-outline px-6 py-2">
-                Live Demo
-              </button>
+              <Button asChild variant="secondary">
+                <Link href={`/projects/${mostRecentProject?.slug}`}>View Project</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="#">Live Demo</Link>
+              </Button>
             </div>
 
             <div className="text-sm text-gray-400">

@@ -6,7 +6,6 @@
 
 @layer base {
   :root {
-    /* Dark theme colors for your portfolio */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
@@ -49,51 +48,63 @@
 }
 
 @layer components {
-  /* Your existing portfolio-specific styles */
+  /* Utility classes for buttons */
+  .button-base {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  .button-default {
+    @apply h-10 px-4 py-2;
+  }
+  .button-sm {
+    @apply h-9 rounded-md px-3;
+  }
+  .button-lg {
+    @apply h-11 rounded-md px-8;
+  }
+  .button-icon {
+    @apply h-10 w-10;
+  }
+  .variant-default {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+  .variant-destructive {
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
+  }
+  .variant-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+  }
+  .variant-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+  .variant-ghost {
+    @apply hover:bg-accent hover:text-accent-foreground;
+  }
+  .variant-link {
+    @apply text-primary underline-offset-4 hover:underline;
+  }
+  .variant-gradient {
+    @apply bg-gradient-to-r from-slate-500 to-slate-600 hover:from-slate-600 hover:to-slate-700 text-white border-none shadow-lg hover:scale-105 transition-transform;
+  }
+
+  /* Other component styles */
   .gradient-text-main {
-    @apply bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-slate-400 via-slate-600 to-slate-800 bg-clip-text text-transparent;
   }
-  
   .gradient-text-blue {
-    @apply bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-slate-400 to-slate-600 bg-clip-text text-transparent;
   }
-  
   .gradient-text-purple {
-    @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-slate-600 to-slate-800 bg-clip-text text-transparent;
   }
-
   .contact-input {
-    @apply w-full px-4 py-3 mb-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all;
+    @apply w-full px-4 py-3 mb-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-400 transition-all;
   }
-
-  .btn-primary {
-    @apply bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 border-none rounded-lg text-white font-semibold cursor-pointer transition-transform hover:scale-105;
-  }
-
-  .btn-gradient {
-    @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 border-none rounded-full text-white font-semibold cursor-pointer transition-transform hover:scale-105 shadow-lg;
-  }
-
-  .btn-outline {
-    @apply bg-transparent border-2 border-purple-400 rounded-full text-white font-semibold cursor-pointer transition-all hover:bg-purple-400 hover:text-white hover:scale-105;
-  }
-
-  .btn-secondary {
-    @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 border-none rounded-lg text-white font-semibold cursor-pointer transition-transform hover:scale-105;
-  }
-
-  .btn-secondary-outline {
-    @apply bg-transparent border border-purple-400 rounded-lg text-white font-semibold cursor-pointer transition-all hover:bg-purple-400 hover:scale-105;
-  }
-
   .profile-container {
-    @apply w-48 h-48 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 p-1 shadow-2xl relative;
+    @apply w-48 h-48 rounded-full bg-gradient-to-r from-slate-400 to-slate-600 p-1 shadow-2xl relative;
   }
-
   .profile-image {
     @apply w-full h-full rounded-full bg-gray-700 flex items-center justify-center text-6xl;
   }
-
   .profile-status {
     @apply absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full animate-pulse-green;
   }

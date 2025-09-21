@@ -90,20 +90,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-  safelist: [
-    // Your existing safelist
-    "translate-x-0",
-    "-translate-x-full",
-    "translate-x-full",
-    {
-      pattern: /translate-x-(0|1\/3|full)/,
-      variants: ["hover", "focus"],
-    },
-    {
-      pattern: /-translate-x-(1\/3|full)/,
-      variants: ["hover", "focus"],
-    },
-    "scale-125",
-    "scale-100",
-  ]
-}
+};
